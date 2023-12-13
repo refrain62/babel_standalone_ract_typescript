@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>React tsx-esm-standalone</title>
+  <script  src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <p>4. React部分を別ファイル(.tsx)に切り出す(おまけ。tsxファイルを読み込み、そのまま実行できることを確認)</p>
+  <div id="app"></div>
+
+  <script>
+    Babel.registerPreset('tsx', {
+      presets: [
+        [Babel.availablePresets['typescript'], {allExtensions: true, isTSX: true}]],
+      },
+    );
+  </script>
+  <script type="text/babel" data-type="module" data-presets="tsx,react" src="./src/Counter.tsx">
+  </script>
+</body>
+</html>
